@@ -63,38 +63,40 @@ app.get("/health", (_req, res) => {
 });
 
 app.listen(PORT, () => {
+  // Use a placeholder in logged curl examples — never log the actual key value
+  const keyHint = "$AGENT_API_KEY";
   console.log(`\n🚀 AgentKit github-express example running\n`);
   console.log(`   Repo:      ${GITHUB_REPO}`);
   console.log(`   Health:    GET  ${BASE_URL}/health`);
   console.log(`   Tools:     GET  ${BASE_URL}/agent/tools`);
   console.log(`   MCP:       POST ${BASE_URL}/agent/mcp`);
   console.log(`   Approvals: GET  ${BASE_URL}/agent/approvals/ui`);
-  console.log(`\n   API key:   ${AGENT_API_KEY}`);
+  console.log(`\n   API key:   set in AGENT_API_KEY env var`);
   console.log(`\n── Read tools (no approval) ─────────────────────────────────────`);
   console.log(`\n  # Search issues:`);
   console.log(`  curl -X POST ${BASE_URL}/agent/tools/search_issues \\`);
-  console.log(`    -H "Authorization: Bearer ${AGENT_API_KEY}" \\`);
+  console.log(`    -H "Authorization: Bearer ${keyHint}" \\`);
   console.log(`    -H "Content-Type: application/json" \\`);
   console.log(`    -d '{"query":"is:open label:bug"}'\n`);
   console.log(`  # Get a specific issue:`);
   console.log(`  curl -X POST ${BASE_URL}/agent/tools/get_issue \\`);
-  console.log(`    -H "Authorization: Bearer ${AGENT_API_KEY}" \\`);
+  console.log(`    -H "Authorization: Bearer ${keyHint}" \\`);
   console.log(`    -H "Content-Type: application/json" \\`);
   console.log(`    -d '{"issue_number":1}'\n`);
   console.log(`  # List open PRs:`);
   console.log(`  curl -X POST ${BASE_URL}/agent/tools/list_pull_requests \\`);
-  console.log(`    -H "Authorization: Bearer ${AGENT_API_KEY}" \\`);
+  console.log(`    -H "Authorization: Bearer ${keyHint}" \\`);
   console.log(`    -H "Content-Type: application/json" \\`);
   console.log(`    -d '{"state":"open"}'\n`);
   console.log(`  # Check Actions status:`);
   console.log(`  curl -X POST ${BASE_URL}/agent/tools/get_actions_status \\`);
-  console.log(`    -H "Authorization: Bearer ${AGENT_API_KEY}" \\`);
+  console.log(`    -H "Authorization: Bearer ${keyHint}" \\`);
   console.log(`    -H "Content-Type: application/json" \\`);
   console.log(`    -d '{}'\n`);
   console.log(`── Write tools (require approval) ───────────────────────────────`);
   console.log(`\n  # Create an issue (will need approval):`);
   console.log(`  curl -X POST ${BASE_URL}/agent/tools/create_issue \\`);
-  console.log(`    -H "Authorization: Bearer ${AGENT_API_KEY}" \\`);
+  console.log(`    -H "Authorization: Bearer ${keyHint}" \\`);
   console.log(`    -H "Content-Type: application/json" \\`);
   console.log(`    -d '{"title":"Test issue","body":"Created by AgentKit"}'\n`);
   console.log(`  Then open the approvalUrl in a browser to approve/deny.\n`);
