@@ -77,7 +77,7 @@ export function createMcpHandler(tools: Tool[]) {
 
         // For MCP, we execute with a system auth context (no approval gating at protocol layer)
         // The app-level policy is enforced via createAgentRouter; direct MCP calls get a service context.
-        const callId = `mcp_${Date.now()}`;
+        const callId = `mcp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
         const auth = {
           agentId: "mcp_client",
           agentName: "MCP Client",

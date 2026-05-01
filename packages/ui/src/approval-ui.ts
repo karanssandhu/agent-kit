@@ -6,7 +6,11 @@
 export interface ApprovalUiOptions {
   /** Base URL of the agent router, e.g. "http://localhost:3000" */
   baseUrl: string;
-  /** API key to use for approve/deny calls from the browser */
+  /**
+   * API key used by the browser to call approve/deny endpoints.
+   * In production, replace with a session token or short-lived credential.
+   * Defaults to "agent_key_123" for local development only.
+   */
   apiKey?: string;
   /** Page title */
   title?: string;

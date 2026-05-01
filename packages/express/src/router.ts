@@ -224,7 +224,6 @@ function buildApprovalUiHtml(baseUrl: string): string {
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
-      transition: opacity 0.15s;
     }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
     .btn-approve { background: #10b981; color: #fff; }
