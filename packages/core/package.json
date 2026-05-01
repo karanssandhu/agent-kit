@@ -1,0 +1,17 @@
+{
+  "name": "@agentkit/core",
+  "version": "0.1.0",
+  "description": "Core tool definitions, schema validation, auth interfaces, and policy engine for AgentKit",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "files": ["dist"],
+  "license": "MIT"
+}

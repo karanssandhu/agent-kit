@@ -1,0 +1,24 @@
+{
+  "name": "agentkit-cli",
+  "version": "0.1.0",
+  "description": "CLI for scaffolding AgentKit apps and running the dev server",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "agentkit": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "files": ["dist"],
+  "license": "MIT"
+}
