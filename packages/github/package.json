@@ -1,0 +1,21 @@
+{
+  "name": "@agentkit/github",
+  "version": "0.1.0",
+  "description": "GitHub integration for AgentKit: tools for issues, pull requests, and Actions using PAT auth",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@agentkit/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "files": ["dist"],
+  "license": "MIT"
+}
