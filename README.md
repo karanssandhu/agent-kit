@@ -39,6 +39,7 @@ Now any AI agent (Claude, GPT-4, etc.) can call `get_customer` through your `/ag
 |---|---|
 | [`@agentkit/core`](./packages/core) | Tool definitions, JSON Schema validation, auth interfaces, policy engine |
 | [`@agentkit/express`](./packages/express) | Express middleware, MCP server, SQLite audit log, approval workflow |
+| [`@agentkit/github`](./packages/github) | GitHub integration: issues, PRs, Actions — PAT auth, single-repo scope |
 | [`@agentkit/ui`](./packages/ui) | Embeddable approval UI (vanilla JS, zero dependencies) |
 | [`agentkit-cli`](./packages/cli) | CLI: scaffold new apps, run dev server |
 
@@ -77,6 +78,17 @@ pnpm dev
 
 This starts:
 - Express + MCP server on `http://localhost:3000`
+
+### GitHub integration example
+
+```bash
+cd examples/github-express
+cp .env.example .env
+# Set GITHUB_TOKEN and GITHUB_REPO in .env
+pnpm dev
+```
+
+See [`examples/github-express/README.md`](./examples/github-express/README.md) for full setup instructions.
 
 ### 4. Test a read tool (no approval needed)
 
